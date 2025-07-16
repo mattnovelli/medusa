@@ -5,13 +5,13 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
-import { Michroma } from "next/font/google"
+import { Michroma, VT323 } from "next/font/google"
 import Wordmark from "@modules/home/components/logos/wordmark"
 
-const michroma = Michroma({
+const vt323 = VT323({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-michroma",
+  variable: "--font-vt323",
 })
 
 export default async function Nav() {
@@ -20,7 +20,7 @@ export default async function Nav() {
   return (
     <div className="sticky top-0 inset-x-0 z-50 group text-white">
       <header className="relative h-16 mx-auto  duration-200 bg-green-900 ">
-        <nav className="content-container txt-xsmall-plus  flex items-center justify-between w-full h-full text-small-regular">
+        <nav className="content-container  flex items-center justify-between w-full h-full ">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
               <SideMenu regions={regions} />
@@ -30,7 +30,7 @@ export default async function Nav() {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className={`size-12 txt-compact-xlarge-plus hover:text-ui-fg-base uppercase ${michroma.className}`}
+              className={`size-12  hover:text-yellow `}
               data-testid="nav-store-link"
             >
               <Wordmark />

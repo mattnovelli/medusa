@@ -7,8 +7,7 @@ import { getRegion } from "@lib/data/regions"
 
 export const metadata: Metadata = {
   title: "Dearborn Audio Electronics",
-  // description:
-  //   "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+  description: "welcome to the dearborn audio electronix online experience",
 }
 
 export default async function Home({

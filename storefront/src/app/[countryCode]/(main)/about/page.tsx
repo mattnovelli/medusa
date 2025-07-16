@@ -32,11 +32,7 @@ export default async function AboutPage({
           <Heading level="h1" className="text-center mb-8">
             About Us
           </Heading>
-          <p className="text-center mb-4">
-            Welcome to Dearborn Audio Electronics, your go-to destination for
-            high-quality audio equipment and accessories. We are passionate
-            about delivering exceptional sound experiences to our customers.
-          </p>
+          <p className="text-center mb-4">write some stuff here</p>
         </ul>
       </div>
     </>
