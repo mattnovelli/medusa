@@ -6,6 +6,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 import { Michroma } from "next/font/google"
+import Wordmark from "@modules/home/components/logos/wordmark"
 
 const michroma = Michroma({
   subsets: ["latin"],
@@ -17,9 +18,9 @@ export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
 
   return (
-    <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto border-b duration-200 bg-white border-ui-border-base">
-        <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
+    <div className="sticky top-0 inset-x-0 z-50 group text-white">
+      <header className="relative h-16 mx-auto  duration-200 bg-green-900 ">
+        <nav className="content-container txt-xsmall-plus  flex items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
               <SideMenu regions={regions} />
@@ -29,10 +30,10 @@ export default async function Nav() {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className={`txt-compact-xlarge-plus hover:text-ui-fg-base uppercase ${michroma.className}`}
+              className={`size-12 txt-compact-xlarge-plus hover:text-ui-fg-base uppercase ${michroma.className}`}
               data-testid="nav-store-link"
             >
-              DBAE
+              <Wordmark />
             </LocalizedClientLink>
           </div>
 
@@ -40,7 +41,7 @@ export default async function Nav() {
             <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.NEXT_PUBLIC_FEATURE_SEARCH_ENABLED && (
                 <LocalizedClientLink
-                  className="hover:text-ui-fg-base"
+                  className="hover:text-gray-200"
                   href="/search"
                   scroll={false}
                   data-testid="nav-search-link"
