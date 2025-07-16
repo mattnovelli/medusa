@@ -12,12 +12,12 @@ const Hero = () => {
           >
             welcome to dearborn audio electronics
           </Heading>
-          <Heading
+          {/* <Heading
             level="h2"
             className="text-3xl leading-10 text-ui-fg-subtle font-normal"
           >
             we got all kinds of shit you kno
-          </Heading>
+          </Heading> */}
         </span>
       </div>
     </div>

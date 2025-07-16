@@ -11,10 +11,11 @@ import { HttpTypes } from "@medusajs/types"
 
 const SideMenuItems = {
   Home: "/",
+  About: "/about",
   Store: "/store",
-  Search: "/search",
-  Account: "/account",
-  Cart: "/cart",
+  // Search: "/search",
+  // Account: "/account",
+  // Cart: "/cart",
 }
 
 const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
@@ -72,7 +73,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                       })}
                     </ul>
                     <div className="flex flex-col gap-y-6">
-                      <div
+                      {/* <div
                         className="flex justify-between"
                         onMouseEnter={toggleState.open}
                         onMouseLeave={toggleState.close}
@@ -89,7 +90,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                             toggleState.state ? "-rotate-90" : ""
                           )}
                         />
-                      </div>
+                      </div> */}
                       <Text className="flex justify-between txt-compact-small">
                         © {new Date().getFullYear()} Dearborn Audio Electronics.
                         All rights reserved.

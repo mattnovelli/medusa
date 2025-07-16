@@ -5,6 +5,13 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import { Michroma } from "next/font/google"
+
+const michroma = Michroma({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-michroma",
+})
 
 export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
@@ -22,10 +29,10 @@ export default async function Nav() {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className={`txt-compact-xlarge-plus hover:text-ui-fg-base uppercase ${michroma.className}`}
               data-testid="nav-store-link"
             >
-              Dearborn Audio Electronics
+              DBAE
             </LocalizedClientLink>
           </div>
 
@@ -41,13 +48,13 @@ export default async function Nav() {
                   Search
                 </LocalizedClientLink>
               )}
-              <LocalizedClientLink
+              {/* <LocalizedClientLink
                 className="hover:text-ui-fg-base"
                 href="/account"
                 data-testid="nav-account-link"
               >
                 Account
-              </LocalizedClientLink>
+              </LocalizedClientLink> */}
             </div>
             <Suspense
               fallback={
