@@ -14,10 +14,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-mode="light" className={vt323.className}>
+    <html
+      lang="en"
+      data-mode="light"
+      className={`${vt323.className} bg-green-950`}
+    >
       <meta name="apple-mobile-web-app-title" content="DBAE" />
       <body>
-        <audio src="/music.mp3" loop autoPlay className="hidden" />
+        {/* <audio src="/music.mp3" loop autoPlay className="hidden" /> */}
         <main className="relative">{props.children}</main>
       </body>
     </html>

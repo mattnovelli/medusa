@@ -7,6 +7,7 @@ import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 import { Michroma, VT323 } from "next/font/google"
 import Wordmark from "@modules/home/components/logos/wordmark"
+import Marquee from "app/[countryCode]/(main)/marquee"
 
 const vt323 = VT323({
   subsets: ["latin"],
@@ -19,7 +20,10 @@ export default async function Nav() {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group text-white">
-      <header className="relative h-16 mx-auto  duration-200 bg-green-900 ">
+      <header
+        className="relative h-16 mx-auto  duration-200 bg-green-950"
+        // style={{ backgroundColor: "rgb(0, 46, 0)" }}
+      >
         <nav className="content-container  flex items-center justify-between w-full h-full ">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
@@ -57,7 +61,7 @@ export default async function Nav() {
                 Account
               </LocalizedClientLink> */}
             </div>
-            <Suspense
+            {/* <Suspense
               fallback={
                 <LocalizedClientLink
                   className="hover:text-ui-fg-base flex gap-2"
@@ -69,9 +73,10 @@ export default async function Nav() {
               }
             >
               <CartButton />
-            </Suspense>
+            </Suspense> */}
           </div>
         </nav>
+        {/* <Marquee /> */}
       </header>
     </div>
   )

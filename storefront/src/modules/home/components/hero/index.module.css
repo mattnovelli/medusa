@@ -1,0 +1,10 @@
+/* .bg {
+  background-color: #166534;
+  opacity: 0.8;
+  background-image: linear-gradient(#2d7448 2px, transparent 2px),
+    linear-gradient(90deg, #2d7448 2px, transparent 2px),
+    linear-gradient(#2d7448 1px, transparent 1px),
+    linear-gradient(90deg, #2d7448 1px, #166534 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+} */
