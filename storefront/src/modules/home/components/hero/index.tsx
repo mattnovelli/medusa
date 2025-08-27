@@ -3,6 +3,7 @@ import { Button, Heading } from "@medusajs/ui"
 import Marquee from "app/[countryCode]/(main)/marquee"
 import { VT323, Inter } from "next/font/google"
 import styles from "./index.module.css"
+import Image from "next/image"
 const vt323 = VT323({
   subsets: ["latin"],
   weight: "400",
@@ -21,11 +22,22 @@ const Hero = () => {
         className={`md:h-[calc(100vh-104px)] h-auto w-full relative bg-green-800 place-items-center p-8 gap-12 flex flex-col md:flex-row items-center justify-center ${styles.bg}`}
       >
         {/* <div className="flex flex-col gap-4 items-center justify-center w-full md:w-1/2"> */}
-        <img
+        {/* <img
           src="/db.jpg"
           alt="A photo of Dearborn next to an electronics bench, looking mischevious."
           className={`${vt323.className} max-h-[28rem] w-auto object-cover color-white rounded-lg shadow-lg`}
-        />
+        /> */}
+
+        <picture>
+          <source srcSet="/db.webp" type="image/webp" />
+          <source srcSet="/db.jpeg" type="image/jpeg" />
+          <img
+            className={`${vt323.className} max-h-[28rem] w-auto object-cover color-white rounded-lg shadow-lg`}
+            src="/db.jpeg"
+            alt="A photo of Dearborn next to an electronics bench, looking mischevious."
+          />
+        </picture>
+
         {/* </div> */}
         <div className="color-white text-2xl flex flex-col gap-4 text-white w-full md:w-1/2">
           <span className="flex flex-row flex-wrap gap-2 items-baseline">
