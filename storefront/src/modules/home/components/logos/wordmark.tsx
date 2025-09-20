@@ -4,7 +4,7 @@ export default function Wordmark() {
   return (
     <img
       src={"/transparent on white.svg"}
-      alt="Dearborn Audio Electronics Logo"
+      alt="Dearborn Audio Effects Logo"
       className="h-auto w-auto"
     />
   )

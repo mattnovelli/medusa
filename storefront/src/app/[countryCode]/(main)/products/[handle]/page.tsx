@@ -57,10 +57,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${product.title} | Dearborn Audio Electronics`,
+    title: `${product.title} | Dearborn Audio Effects`,
     description: `${product.title}`,
     openGraph: {
-      title: `${product.title} | Dearborn Audio Electronics`,
+      title: `${product.title} | Dearborn Audio Effects`,
       description: `${product.title}`,
       images: product.thumbnail ? [product.thumbnail] : [],
     },

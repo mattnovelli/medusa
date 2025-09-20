@@ -12,10 +12,10 @@ export default function Marquee() {
       className={`${styles.marquee} ${michroma.className} uppercase bg-green-900`}
     >
       <ul className={styles.marqueeContent}>
-        <p>Dearborn Audio Electronics</p>
+        <p>Dearborn Audio Effects</p>
       </ul>
       <ul className={styles.marqueeContent} aria-hidden="true">
-        <p>Dearborn Audio Electronics</p>
+        <p>Dearborn Audio Effects</p>
       </ul>
     </div>
   )

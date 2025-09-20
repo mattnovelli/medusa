@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const metadata = {
-    title: `${collection.title} | Dearborn Audio Electronics`,
+    title: `${collection.title} | Dearborn Audio Effects`,
     description: `${collection.title} collection`,
   } as Metadata
 

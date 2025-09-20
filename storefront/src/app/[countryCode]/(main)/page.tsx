@@ -6,8 +6,8 @@ import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 
 export const metadata: Metadata = {
-  title: "Dearborn Audio Electronics",
-  description: "welcome to the dearborn audio electronix online experience",
+  title: "Dearborn Audio Effects",
+  description: "welcome to the dearborn audio fx online experience",
 }
 
 export default async function Home({
