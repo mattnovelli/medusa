@@ -5,6 +5,10 @@ import { VT323, Inter } from "next/font/google"
 import styles from "./index.module.css"
 import Image from "next/image"
 import React from "react"
+import PageButton from "../PageButton"
+import { HiMiniWrenchScrewdriver } from "react-icons/hi2"
+import { RiCompasses2Fill } from "react-icons/ri"
+import { FaDraftingCompass, FaWrench } from "react-icons/fa"
 
 const vt323 = VT323({
   subsets: ["latin"],
@@ -74,6 +78,20 @@ const Hero = () => {
             <h1 className="text-5xl font-bold ">Dearborn Plys</h1>
             <h2 className="text-2xl font-bold">(they/them)</h2>
           </span>
+          <div className="flex flex-row gap-4">
+            <PageButton
+              icon={<FaWrench />}
+              label="Repairs"
+              color="yellow"
+              path="/repairs"
+            />
+            <PageButton
+              icon={<FaDraftingCompass />}
+              label="Design"
+              color="purple-900"
+              path="/design"
+            />
+          </div>
           <div className="lg:overflow-y-auto md:overflow-y-auto   lg:max-h-[50vh] md:max-h-[50vh] pr-2 flex flex-col gap-4">
             <p>
               Hello! It's very nice to meet you. I'm Dearborn Plys, a hardware
