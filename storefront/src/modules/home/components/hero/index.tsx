@@ -1,6 +1,6 @@
 import { Github } from "@medusajs/icons"
 import { Button, Heading } from "@medusajs/ui"
-import Marquee from "app/[countryCode]/(main)/marquee"
+import Marquee from "app/(main)/marquee"
 import { VT323, Inter, Montserrat, Michroma } from "next/font/google"
 import styles from "./index.module.css"
 import Image from "next/image"
@@ -19,7 +19,7 @@ const michroma = Michroma({
  * Renders text where each letter receives an alternating custom underline color.
  * Underline is drawn via a pseudo-element so the text color can remain unchanged.
  */
-const AlternatingUnderlineLink: React.FC<{
+export const AlternatingUnderlineLink: React.FC<{
   href: string
   text: string
 }> = ({ href, text }) => {
@@ -53,7 +53,7 @@ const AlternatingUnderlineLink: React.FC<{
 
 const Hero = () => {
   return (
-    <div className="md:h-[calc(100vh-6rem)]  w-full flex flex-col items-center justify-center ">
+    <div className=" w-full flex flex-col items-center justify-center ">
       <div
         className={` w-full relative  place-items-center md:max-w-4xl md:p-8  gap-6 grid grid-cols-1 md:grid-cols-[1fr_2fr] grid-rows-1 items-start  justify-center ${styles.bg}`}
       >

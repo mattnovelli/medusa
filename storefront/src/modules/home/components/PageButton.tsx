@@ -10,6 +10,7 @@ interface PageButtonProps {
   color: string
   path: string
   background: boolean
+  className?: string
 }
 
 export default function PageButton({
@@ -18,15 +19,16 @@ export default function PageButton({
   color,
   path,
   background,
+  className,
 }: PageButtonProps) {
   const letters = label.split("")
   return (
     <Link
-      className={`uppercase min-w-16 no-underline flex items-center gap-3 px-3 py-1 text-2xl  ${
+      className={`uppercase w-full h-full justify-center flex flex-row flex-nowrap items-center text-nowrap no-underline gap-3 px-3  text-2xl  ${
         background
           ? "bg-purple-900 border rounded " + styles.button
           : "bg-transparent " + styles.link
-      }`}
+      } ${className || ""}`}
       href={path}
     >
       <span className="text-base">{icon}</span>

@@ -23,7 +23,7 @@ const SideMenuItems = {
   // Cart: "/cart",
 }
 
-const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
+const SideMenu = () => {
   const toggleState = useToggleState()
 
   return (
@@ -36,7 +36,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                 <Popover.Button
                   data-testid="nav-menu-button"
                   aria-label="Menu"
-                  className="relative h-full pl-5 flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base"
+                  className="relative h-full pl-5 flex items-center focus:outline-none "
                 >
                   <GiHamburgerMenu size={"2rem"} />
                 </Popover.Button>
@@ -67,16 +67,10 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                         icon={<FaPersonRays />}
                         label="About"
                         color="yellow"
-                        path="/about"
+                        path="/"
                         background={false}
                       />
-                      <PageButton
-                        icon={<FaClipboardList />}
-                        label="Survey"
-                        color="yellow"
-                        path="/survey"
-                        background={false}
-                      />
+
                       <PageButton
                         icon={<FaWrench />}
                         label="Repairs"
@@ -89,6 +83,13 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                         label="Design"
                         color="purple-900"
                         path="/design"
+                        background={false}
+                      />
+                      <PageButton
+                        icon={<FaClipboardList />}
+                        label="Survey"
+                        color="yellow"
+                        path="/survey"
                         background={false}
                       />
                       {/* {Object.entries(SideMenuItems).map(([name, href]) => {
