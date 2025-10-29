@@ -9,6 +9,7 @@ interface PageButtonProps {
   label: string
   color: string
   path: string
+  background: boolean
 }
 
 export default function PageButton({
@@ -16,11 +17,16 @@ export default function PageButton({
   label,
   color,
   path,
+  background,
 }: PageButtonProps) {
   const letters = label.split("")
   return (
     <Link
-      className={`${styles.link} uppercase min-w-16 no-underline flex items-center gap-3 px-3 py-1 text-2xl border rounded bg-purple-900`}
+      className={`uppercase min-w-16 no-underline flex items-center gap-3 px-3 py-1 text-2xl  ${
+        background
+          ? "bg-purple-900 border rounded " + styles.button
+          : "bg-transparent " + styles.link
+      }`}
       href={path}
     >
       <span className="text-base">{icon}</span>
@@ -35,7 +41,7 @@ export default function PageButton({
           </span>
         ))}
       </span>
-      <HiChevronRight size={"1rem"} />
+      {background && <HiChevronRight size={"1rem"} />}
     </Link>
   )
 }

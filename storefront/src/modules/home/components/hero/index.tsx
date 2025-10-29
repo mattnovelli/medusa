@@ -1,24 +1,18 @@
 import { Github } from "@medusajs/icons"
 import { Button, Heading } from "@medusajs/ui"
 import Marquee from "app/[countryCode]/(main)/marquee"
-import { VT323, Inter } from "next/font/google"
+import { VT323, Inter, Montserrat, Michroma } from "next/font/google"
 import styles from "./index.module.css"
 import Image from "next/image"
 import React from "react"
 import PageButton from "../PageButton"
-import { HiMiniWrenchScrewdriver } from "react-icons/hi2"
-import { RiCompasses2Fill } from "react-icons/ri"
-import { FaDraftingCompass, FaWrench } from "react-icons/fa"
 
-const vt323 = VT323({
-  subsets: ["latin"],
-  weight: "400",
-})
+import { FaClipboardList, FaDraftingCompass, FaWrench } from "react-icons/fa"
+import { FaPersonRays } from "react-icons/fa6"
 
-const inter = Inter({
+const michroma = Michroma({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-inter",
+  weight: ["400"],
 })
 
 /**
@@ -59,50 +53,45 @@ const AlternatingUnderlineLink: React.FC<{
 
 const Hero = () => {
   return (
-    <>
+    <div className="md:h-[calc(100vh-6rem)]  w-full flex flex-col items-center justify-center ">
       <div
-        className={`md:h-[calc(100vh-104px)] h-auto w-full relative bg-green-800 place-items-center p-8 gap-12 flex flex-col md:flex-row items-center justify-center ${styles.bg}`}
+        className={` w-full relative  place-items-center md:max-w-4xl md:p-8  gap-6 grid grid-cols-1 md:grid-cols-[1fr_2fr] grid-rows-1 items-start  justify-center ${styles.bg}`}
       >
         <picture>
           <source srcSet="/db.webp" type="image/webp" />
           <source srcSet="/db.jpeg" type="image/jpeg" />
           <img
-            className={`${vt323.className} max-h-[28rem] w-auto object-cover color-white rounded-lg shadow-lg`}
+            className={`w-auto object-cover color-white rounded-lg shadow-lg`}
             src="/db.jpeg"
             alt="A photo of Dearborn next to an electronics bench, looking mischevious."
           />
         </picture>
 
-        <div className="color-white text-2xl flex flex-col gap-4 text-white w-full md:w-1/2">
-          <span className="flex flex-row flex-wrap gap-2 items-baseline">
-            <h1 className="text-5xl font-bold ">Dearborn Plys</h1>
-            <h2 className="text-2xl font-bold">(they/them)</h2>
-          </span>
-          <div className="flex flex-row gap-4">
-            <PageButton
-              icon={<FaWrench />}
-              label="Repairs"
-              color="yellow"
-              path="/repairs"
-            />
-            <PageButton
-              icon={<FaDraftingCompass />}
-              label="Design"
-              color="purple-900"
-              path="/design"
-            />
-          </div>
-          <div className="lg:overflow-y-auto md:overflow-y-auto   lg:max-h-[50vh] md:max-h-[50vh] pr-2 flex flex-col gap-4">
-            <p>
-              Hello! It's very nice to meet you. I'm Dearborn Plys, a hardware
-              engineer, vocalist, and guitar player based in Urbana, Illinois.
-              Dearborn Audio Effects is my project to create strange and
-              wonderful soundmaking devices. Pedal effects and stylized
-              microphones are on my mind, so that's what you can expect to see
-              in the near future.
-            </p>
-
-            <p>
+        <div
+          className={`md:gap-3 color-white text-2xl flex flex-col text-white w-full col-span-1 mt-auto `}
+        >
+          <h1
+            className={`${michroma.className} -translate-y-16 md:translate-y-0  text-5xl font-bold text-shadow-md`}
+          >
+            Dearborn Plys
+          </h1>
+          {/* <h3 className={`${michroma.className} text-2xl font-bold`}>
+            they/them
+          </h3> */}
+          {/* <div
+            className={` lg:overflow-y-auto md:overflow-y-auto text-2xl md:h-[100%] pr-2 flex flex-col gap-4`}
+          > */}
+          <p>
+            Hello! It's very nice to meet you. I'm Dearborn Plys (they/them), a
+            hardware engineer, vocalist, and guitar player based in Urbana,
+            Illinois.
+          </p>
+          <p>
+            Dearborn Audio Effects is my project to create strange and wonderful
+            soundmaking devices. Pedal effects and stylized microphones are on
+            my mind, so that's what you can expect to see in the near future.
+          </p>
+          {/* <p>
               I started playing riot grrl and messing with pedals in high
               school, and proceeded to study Electrical Engineering at the
               University of Illinois at Urbana-Champaign. I've worked as an
@@ -132,15 +121,15 @@ const Hero = () => {
             <p>
               Looking for repairs locally? Send me an email at{" "}
               <a href="mailto:repair@dearborn.cool">repair@dearborn.cool</a>
-            </p>
+            </p> */}
 
-            <a href="/survey" className=" font-bold font-2xl">
+          {/* <a href="/survey" className=" font-bold font-2xl">
               Tell me what you want, or else ...
-            </a>
-          </div>
+            </a> */}
+          {/* </div> */}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

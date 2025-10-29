@@ -13,7 +13,7 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
   return (
     <>
       <Nav />
-      <Marquee />
+      {/* <Marquee /> */}
       {props.children}
       {/* <Footer /> */}
     </>

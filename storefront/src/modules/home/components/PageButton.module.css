@@ -1,15 +1,17 @@
 .letter {
   display: inline-block;
 }
-.link {
+.link,
+.button {
   transition: all 0.2s linear;
 }
-.link:hover {
+.button:hover {
   transform: translate(5px, -5px);
   box-shadow: -5px 5px 0px rgb(0, 0, 0);
 }
 
-.link:hover > .word > .letter {
+.link:hover > .word > .letter,
+.button:hover > .word > .letter {
   animation: letterJump 0.5s ease forwards;
 }
 

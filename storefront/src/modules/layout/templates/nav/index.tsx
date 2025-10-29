@@ -8,6 +8,9 @@ import SideMenu from "@modules/layout/components/side-menu"
 import { Michroma, VT323 } from "next/font/google"
 import Wordmark from "@modules/home/components/logos/wordmark"
 import Marquee from "app/[countryCode]/(main)/marquee"
+import { FaClipboardList, FaDraftingCompass, FaWrench } from "react-icons/fa"
+import PageButton from "@modules/home/components/PageButton"
+import { FaPersonRays } from "react-icons/fa6"
 
 const vt323 = VT323({
   subsets: ["latin"],
@@ -20,28 +23,61 @@ export default async function Nav() {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group text-white">
-      <header
-        className="relative h-16 mx-auto  duration-200 bg-green-950"
-        // style={{ backgroundColor: "rgb(0, 46, 0)" }}
-      >
-        <nav className="content-container  flex items-center justify-between w-full h-full ">
-          <div className="flex-1 basis-0 h-full flex items-center">
-            <div className="h-full">
+      <header className="relative h-16 mx-auto duration-200 bg-green-950 ">
+        <nav className="content-container w-full h-full  flex items-center">
+          {/* Left section: mobile SideMenu OR first two desktop buttons */}
+          <div className="flex items-center md:flex-1 h-full">
+            <div className="flex md:hidden h-full items-center">
               <SideMenu regions={regions} />
+            </div>
+            <div className="hidden md:flex items-center gap-4 flex-1 justify-around h-full">
+              <PageButton
+                icon={<FaWrench />}
+                label="Repairs"
+                color="yellow"
+                path="/repairs"
+                background={false}
+              />
+              <PageButton
+                icon={<FaDraftingCompass />}
+                label="Design"
+                color="purple-900"
+                path="/design"
+                background={false}
+              />
             </div>
           </div>
 
-          <div className="flex items-center h-full">
+          {/* Center logo always (absolute centered on mobile) */}
+          <div className="px-14 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:transform-none flex justify-center items-center">
             <LocalizedClientLink
               href="/"
-              className={`size-12  hover:text-yellow `}
+              className="size-12 hover:text-yellow flex items-center justify-center"
               data-testid="nav-store-link"
             >
               <Wordmark />
             </LocalizedClientLink>
           </div>
 
-          <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
+          {/* Right section: last two desktop buttons */}
+          <div className="hidden md:flex items-center gap-4 flex-1 justify-around h-full">
+            <PageButton
+              icon={<FaPersonRays />}
+              label="About"
+              color="yellow"
+              path="/about"
+              background={false}
+            />
+            <PageButton
+              icon={<FaClipboardList />}
+              label="Survey"
+              color="yellow"
+              path="/survey"
+              background={false}
+            />
+          </div>
+
+          {/* <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.NEXT_PUBLIC_FEATURE_SEARCH_ENABLED && (
                 <LocalizedClientLink
@@ -53,15 +89,15 @@ export default async function Nav() {
                   Search
                 </LocalizedClientLink>
               )}
-              {/* <LocalizedClientLink
+              <LocalizedClientLink
                 className="hover:text-ui-fg-base"
                 href="/account"
                 data-testid="nav-account-link"
               >
                 Account
-              </LocalizedClientLink> */}
+              </LocalizedClientLink> 
             </div>
-            {/* <Suspense
+            <Suspense
               fallback={
                 <LocalizedClientLink
                   className="hover:text-ui-fg-base flex gap-2"
@@ -73,10 +109,9 @@ export default async function Nav() {
               }
             >
               <CartButton />
-            </Suspense> */}
-          </div>
+            </Suspense>
+          </div> */}
         </nav>
-        {/* <Marquee /> */}
       </header>
     </div>
   )
