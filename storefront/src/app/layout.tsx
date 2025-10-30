@@ -9,7 +9,13 @@ const vt323 = VT323({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(getBaseURL()),
+  title: {
+    template: "%s | Dearborn Audio Effects",
+    default: "Dearborn Audio Effects",
+  },
+  description:
+    "Custom audio hardware and audio equipment repairs in Champaign-Urbana, IL.",
+  metadataBase: new URL("https://dearborn.cool"),
 }
 
 export default function RootLayout(props: { children: React.ReactNode }) {

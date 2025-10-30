@@ -7,8 +7,8 @@ import { getRegion } from "@lib/data/regions"
 import { Michroma } from "next/font/google"
 
 export const metadata: Metadata = {
-  title: "Dearborn Audio Effects",
-  description: "welcome to the dearborn audio fx online experience",
+  title: "About",
+  description: "Learn more about Dearborn Plys and Dearborn Audio Effects.",
 }
 
 const michroma = Michroma({
@@ -50,7 +50,7 @@ export default async function Home({
       </div>
       <div className="col-span-2 text-2xl -translate-y-16 md:translate-y-0">
         <h1
-          className={`${michroma.className} text-shadow-sm  text-7xl font-bold text-shadow-md`}
+          className={`${michroma.className} text-shadow-sm  text-6xl font-bold text-shadow-md`}
         >
           Dearborn Plys
         </h1>

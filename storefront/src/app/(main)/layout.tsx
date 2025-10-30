@@ -26,7 +26,6 @@ export default function PageLayout(props: { children: React.ReactNode }) {
 
   return (
     <div className="grid grid-rows-[auto_1fr] text-white max-w-screen-xl mx-auto ">
-      {/* {pathname} */}
       {/* <Nav /> */}
       <div className="grid grid-cols-3 md:grid-cols-10 grid-rows-1 items-center text-white py-4 border-b border-dotted border-1 border-white">
         <div className="flex md:hidden h-full justify-start">
@@ -34,7 +33,7 @@ export default function PageLayout(props: { children: React.ReactNode }) {
         </div>
         <PageButton
           className={`hidden md:flex justify-self-center hover:bg-yellow-600 hover:text-black col-span-2 ${
-            pathname === "/" ? "bg-yellow-600 text-black" : ""
+            pathname === "/" ? "!bg-yellow-600 !text-black" : ""
           }`}
           icon={<FaPersonRays />}
           label="About"
@@ -44,7 +43,7 @@ export default function PageLayout(props: { children: React.ReactNode }) {
         />
         <PageButton
           className={`hidden md:flex justify-self-center hover:bg-red-600 hover:text-black col-span-2 ${
-            pathname === "/repairs" ? "bg-red-600 text-black" : ""
+            pathname === "/repairs" ? "!bg-red-600 !text-black" : ""
           }`}
           icon={<FaWrench />}
           label="Repairs"
@@ -58,7 +57,7 @@ export default function PageLayout(props: { children: React.ReactNode }) {
         </div>
         <PageButton
           className={`hidden md:flex justify-self-center hover:bg-orange-600  hover:text-black col-span-2 ${
-            pathname === "/design" ? "bg-orange-600 text-black" : ""
+            pathname === "/design" ? "!bg-orange-600 !text-black" : ""
           }`}
           icon={<FaDraftingCompass />}
           label="Design"
@@ -68,7 +67,7 @@ export default function PageLayout(props: { children: React.ReactNode }) {
         />
         <PageButton
           className={`hidden md:flex justify-self-center hover:bg-green-600 hover:text-black col-span-2 ${
-            pathname === "/survey" ? "bg-green-600 text-black" : ""
+            pathname === "/survey" ? "!bg-green-600 !text-black" : ""
           }`}
           icon={<FaClipboardList />}
           label="Survey"
