@@ -11,6 +11,7 @@ interface PageButtonProps {
   path: string
   background: boolean
   className?: string
+  onClick?: () => void
 }
 
 export default function PageButton({
@@ -20,6 +21,7 @@ export default function PageButton({
   path,
   background,
   className,
+  onClick,
 }: PageButtonProps) {
   const letters = label.split("")
   return (
@@ -30,6 +32,7 @@ export default function PageButton({
           : "bg-transparent " + styles.link
       } ${className || ""}`}
       href={path}
+      onClick={onClick}
     >
       <span className="text-base">{icon}</span>
       <span aria-label={label} className={styles.word}>

@@ -52,83 +52,72 @@ const SideMenu = () => {
                 leaveFrom="opacity-100 backdrop-blur-2xl"
                 leaveTo="opacity-0"
               >
-                <Popover.Panel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-30 inset-x-0 text-sm text-ui-fg-on-color m-2 backdrop-blur-2xl">
+                <Popover.Panel className="fixed inset-0 z-30 flex flex-col backdrop-blur-2xl">
+                  {/* Full screen menu content */}
                   <div
                     data-testid="nav-menu-popup"
-                    className="flex flex-col h-full bg-[rgba(3,7,18,0.5)] rounded-rounded justify-between p-6"
+                    className="flex flex-col h-full w-full bg-[rgba(3,7,18,0.5)] p-6 text-ui-fg-on-color"
                   >
-                    <div className="flex justify-start" id="xmark">
-                      <button data-testid="close-menu-button" onClick={close}>
+                    <div className="flex justify-end" id="xmark">
+                      <button
+                        data-testid="close-menu-button"
+                        onClick={close}
+                        className="p-2 hover:bg-white/10 rounded-md transition-colors"
+                      >
                         <XMark />
                       </button>
                     </div>
-                    <ul className="flex flex-col gap-6 items-start justify-start">
-                      <PageButton
-                        icon={<FaPersonRays />}
-                        label="About"
-                        color="yellow"
-                        path="/"
-                        background={false}
-                      />
 
-                      <PageButton
-                        icon={<FaWrench />}
-                        label="Repairs"
-                        color="yellow"
-                        path="/repairs"
-                        background={false}
-                      />
-                      <PageButton
-                        icon={<FaDraftingCompass />}
-                        label="Design"
-                        color="purple-900"
-                        path="/design"
-                        background={false}
-                      />
-                      <PageButton
-                        icon={<FaClipboardList />}
-                        label="Survey"
-                        color="yellow"
-                        path="/survey"
-                        background={false}
-                      />
-                      {/* {Object.entries(SideMenuItems).map(([name, href]) => {
-                        return (
-                          <li key={name}>
-                            <LocalizedClientLink
-                              href={href}
-                              className="text-3xl leading-10 hover:text-ui-fg-disabled"
-                              onClick={close}
-                              data-testid={`${name.toLowerCase()}-link`}
-                            >
-                              {name}
-                            </LocalizedClientLink>
-                          </li>
-                        )
-                      })} */}
-                    </ul>
-                    <div className="flex flex-col gap-y-6">
-                      {/* <div
-                        className="flex justify-between"
-                        onMouseEnter={toggleState.open}
-                        onMouseLeave={toggleState.close}
-                      >
-                        {regions && (
-                          <CountrySelect
-                            toggleState={toggleState}
-                            regions={regions}
+                    {/* Centered menu items */}
+                    <div className="flex-1 flex items-center justify-center">
+                      <ul className="flex flex-col gap-6 items-center">
+                        <li>
+                          <PageButton
+                            icon={<FaPersonRays />}
+                            label="About"
+                            color="yellow"
+                            path="/"
+                            onClick={close}
+                            background={false}
                           />
-                        )}
-                        <ArrowRightMini
-                          className={clx(
-                            "transition-transform duration-150",
-                            toggleState.state ? "-rotate-90" : ""
-                          )}
-                        />
-                      </div> */}
-                      <Text className="flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} Dearborn Audio Effects. All
-                        rights reserved.
+                        </li>
+                        <li>
+                          <PageButton
+                            icon={<FaWrench />}
+                            label="Repairs"
+                            color="yellow"
+                            path="/repairs"
+                            onClick={close}
+                            background={false}
+                          />
+                        </li>
+                        <li>
+                          <PageButton
+                            icon={<FaDraftingCompass />}
+                            label="Design"
+                            color="purple-900"
+                            path="/design"
+                            onClick={close}
+                            background={false}
+                          />
+                        </li>
+                        <li>
+                          <PageButton
+                            icon={<FaClipboardList />}
+                            label="Survey"
+                            color="yellow"
+                            path="/survey"
+                            onClick={close}
+                            background={false}
+                          />
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Copyright at bottom */}
+                    <div className="flex justify-center">
+                      <Text className="text-center txt-compact-small">
+                        © {new Date().getFullYear()} Dearborn Audio Effects
                       </Text>
                     </div>
                   </div>

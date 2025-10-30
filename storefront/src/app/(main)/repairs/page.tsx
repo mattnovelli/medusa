@@ -18,7 +18,9 @@ const michroma = Michroma({
 export default function RepairsPage() {
   return (
     <div className="text-2xl p-4">
-      <h1 className={`${michroma.className} text-6xl`}>Electronics Repair</h1>
+      <h1 className={`${michroma.className} text-xl md:text-6xl`}>
+        Electronics Repair
+      </h1>
       <p>
         Located in the Champaign-Urbana area, I offer service on guitar pedals,
         amplifiers, pro audio gear (rack units, synthesizers, etc.), and home

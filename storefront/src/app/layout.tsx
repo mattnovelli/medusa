@@ -26,7 +26,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       className={`${vt323.className} bg-green-950`}
     >
       <meta name="apple-mobile-web-app-title" content="DBAE" />
-      <body>
+      <body className="bg-green-950">
         {/* <audio src="/music.mp3" loop autoPlay className="hidden" /> */}
         <main className="relative">{props.children}</main>
       </body>
