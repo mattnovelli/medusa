@@ -57,7 +57,7 @@
 
 @layer components {
   .content-container {
-    @apply max-w-[1440px] w-full mx-auto px-6;
+    @apply max-w-[1440px] w-full mx-auto;
   }
 
   .contrast-btn {
@@ -115,4 +115,8 @@
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
   }
+}
+
+p:not(:first-child) {
+  @apply mt-4;
 }

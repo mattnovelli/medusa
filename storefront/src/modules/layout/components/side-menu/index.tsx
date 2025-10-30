@@ -8,6 +8,10 @@ import { Fragment } from "react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CountrySelect from "../country-select"
 import { HttpTypes } from "@medusajs/types"
+import PageButton from "@modules/home/components/PageButton"
+import { FaClipboardList, FaDraftingCompass, FaWrench } from "react-icons/fa"
+import { FaPersonRays } from "react-icons/fa6"
+import { GiHamburgerMenu } from "react-icons/gi"
 
 const SideMenuItems = {
   Home: "/",
@@ -19,7 +23,7 @@ const SideMenuItems = {
   // Cart: "/cart",
 }
 
-const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
+const SideMenu = () => {
   const toggleState = useToggleState()
 
   return (
@@ -31,9 +35,10 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
               <div className="relative flex h-full">
                 <Popover.Button
                   data-testid="nav-menu-button"
-                  className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base"
+                  aria-label="Menu"
+                  className="relative h-full pl-5 flex items-center focus:outline-none "
                 >
-                  Menu
+                  <GiHamburgerMenu size={"2rem"} />
                 </Popover.Button>
               </div>
 
@@ -52,13 +57,42 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                     data-testid="nav-menu-popup"
                     className="flex flex-col h-full bg-[rgba(3,7,18,0.5)] rounded-rounded justify-between p-6"
                   >
-                    <div className="flex justify-end" id="xmark">
+                    <div className="flex justify-start" id="xmark">
                       <button data-testid="close-menu-button" onClick={close}>
                         <XMark />
                       </button>
                     </div>
                     <ul className="flex flex-col gap-6 items-start justify-start">
-                      {Object.entries(SideMenuItems).map(([name, href]) => {
+                      <PageButton
+                        icon={<FaPersonRays />}
+                        label="About"
+                        color="yellow"
+                        path="/"
+                        background={false}
+                      />
+
+                      <PageButton
+                        icon={<FaWrench />}
+                        label="Repairs"
+                        color="yellow"
+                        path="/repairs"
+                        background={false}
+                      />
+                      <PageButton
+                        icon={<FaDraftingCompass />}
+                        label="Design"
+                        color="purple-900"
+                        path="/design"
+                        background={false}
+                      />
+                      <PageButton
+                        icon={<FaClipboardList />}
+                        label="Survey"
+                        color="yellow"
+                        path="/survey"
+                        background={false}
+                      />
+                      {/* {Object.entries(SideMenuItems).map(([name, href]) => {
                         return (
                           <li key={name}>
                             <LocalizedClientLink
@@ -71,7 +105,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                             </LocalizedClientLink>
                           </li>
                         )
-                      })}
+                      })} */}
                     </ul>
                     <div className="flex flex-col gap-y-6">
                       {/* <div

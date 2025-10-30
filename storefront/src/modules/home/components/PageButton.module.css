@@ -1,0 +1,29 @@
+.letter {
+  display: inline-block;
+}
+.link,
+.button {
+  transition: all 0.2s linear;
+}
+.button:hover {
+  transform: translate(5px, -5px);
+  box-shadow: -5px 5px 0px rgb(0, 0, 0);
+}
+
+.link:hover > .word > .letter,
+.button:hover > .word > .letter {
+  animation: letterJump 0.5s ease forwards;
+}
+
+@keyframes letterJump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+}

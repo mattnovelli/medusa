@@ -144,8 +144,7 @@ export default async function Footer() {
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
           <Text className="txt-compact-small">
-            © {new Date().getFullYear()} Dearborn Audio Effects. All rights
-            reserved.
+            © {new Date().getFullYear()} Dearborn Audio Effects
           </Text>
         </div>
       </div>
