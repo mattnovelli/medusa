@@ -7,7 +7,7 @@ export default function RepairsForm() {
 
   return (
     <form action={formAction}>
-      <fieldset className="flex flex-col gap-4 md:px-24 px-1 mt-12 ">
+      <fieldset className="flex flex-col gap-4  mt-12 ">
         {/* Success Message */}
         {state?.success && (
           <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded my-4">
@@ -88,14 +88,14 @@ export default function RepairsForm() {
             Preferred Contact Method
           </legend>
           <label
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 font-mono"
             style={{ fontSize: "1.5rem" }}
           >
             <input type="radio" name="contact-method" value="email" required />
             Email
           </label>
           <label
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 font-mono"
             style={{ fontSize: "1.5rem" }}
           >
             <input type="radio" name="contact-method" value="phone" required />

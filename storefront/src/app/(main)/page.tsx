@@ -4,16 +4,16 @@ import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero, { AlternatingUnderlineLink } from "@modules/home/components/hero"
 import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
-import { Michroma } from "next/font/google"
+import { Lexend, Michroma } from "next/font/google"
 
 export const metadata: Metadata = {
   title: "About",
   description: "Learn more about Dearborn Plys and Dearborn Audio Effects.",
 }
 
-const michroma = Michroma({
+const lexend = Lexend({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "600", "900"],
 })
 
 export default async function Home({
@@ -29,7 +29,7 @@ export default async function Home({
   }
 
   return (
-    <div className="grid md:grid-cols-3 md:grid-rows-1 grid-cols-1 md:p-0 p-2 md:[&>*]:p-4 md:[&>*:not(:first-child)]:border-l md:[&>*:not(:first-child)]:border-dotted ">
+    <div className="grid  md:grid-cols-3 md:grid-rows-1 grid-cols-1 md:p-0 p-2 md:[&>*]:p-4 md:[&>*:not(:first-child)]:border-l md:[&>*:not(:first-child)]:border-dotted ">
       {/* <div className="py-12">
         <ul className="flex flex-col gap-x-6">
           <FeaturedProducts collections={collections} region={region} />
@@ -50,7 +50,7 @@ export default async function Home({
       </div>
       <div className="col-span-2 text-2xl -translate-y-16 md:translate-y-0">
         <h1
-          className={`${michroma.className} text-shadow-sm  text-6xl font-bold text-shadow-md`}
+          className={`${lexend.className} [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]  font-semibold text-6xl  text-shadow-md`}
         >
           Dearborn Plys
         </h1>

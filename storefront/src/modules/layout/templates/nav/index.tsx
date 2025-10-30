@@ -22,13 +22,13 @@ export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
 
   return (
-    <div className="sticky top-0 inset-x-0 z-50 group text-white">
+    <div className="sticky top-0 inset-x-0 z-50  text-white">
       <header className="relative h-16 mx-auto duration-200 bg-green-950 ">
         <nav className="content-container w-full h-full  flex items-center">
           {/* Left section: mobile SideMenu OR first two desktop buttons */}
           <div className="flex items-center md:flex-1 h-full">
             <div className="flex md:hidden h-full items-center">
-              <SideMenu regions={regions} />
+              <SideMenu />
             </div>
             <div className="hidden md:flex items-center gap-4 flex-1 justify-around h-full">
               <PageButton
