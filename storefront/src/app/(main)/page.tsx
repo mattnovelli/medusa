@@ -8,7 +8,7 @@ import { Lexend, Michroma } from "next/font/google"
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn more about Dearborn Plys and Dearborn Audio Effects.",
+  description: "Learn more about Dearborn Plys and Dearborn FX.",
 }
 
 const lexend = Lexend({
@@ -61,7 +61,7 @@ export default async function Home({
           Illinois.
         </p>
         <p>
-          Dearborn Audio Effects is my project to create strange and wonderful
+          Dearborn FX is my project to create strange and wonderful
           soundmaking devices. Pedal effects and stylized microphones are on my
           mind, so that's what you can expect to see in the near future.
         </p>
@@ -75,7 +75,12 @@ export default async function Home({
           />
           , building hyper-sensitive synthesizers, programming UI, and providing
           technical support to customers. I've organized shows, run sound live
-          on air for WEFT Sessions, Twitch streamed myself producing, and
+          on air for{" "}
+          <AlternatingUnderlineLink
+            href="https://new.weft.org/"
+            text="WEFT Sessions"
+          /> 
+          , Twitch streamed myself producing, and
           repaired everything I could get my hands on.
         </p>
 
