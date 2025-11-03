@@ -186,7 +186,7 @@ async function sendDiscordNotification(
     }
 
     const payload = {
-      username: "DBAE Repairs",
+      username: "DBFX Repairs",
       avatar_url:
         "https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f3b5.png",
       embeds: [embed],

@@ -48,9 +48,9 @@ export default async function Home({
           </picture>
         </div>
       </div>
-      <div className="col-span-2 text-2xl -translate-y-16 md:translate-y-0">
+      <div className="col-span-2 text-xl -translate-y-16 md:translate-y-0">
         <h1
-          className={`${lexend.className} [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]  font-semibold text-6xl  text-shadow-md`}
+          className={`${lexend.className} [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]  font-semibold text-5xl  text-shadow-md`}
         >
           Dearborn Plys
         </h1>

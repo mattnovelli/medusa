@@ -1,4 +1,6 @@
-# Dearborn Audio Effects
+![DBFX](/storefront/public/dbae-wordmark.svg)
+
+This repository contains a nextjs frontent and a meduas (vite) backend.
 
 # Backend
 

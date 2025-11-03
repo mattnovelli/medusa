@@ -25,7 +25,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       data-mode="light"
       className={`${vt323.className} tracking-tight bg-green-950`}
     >
-      <meta name="apple-mobile-web-app-title" content="DBAE" />
+      <meta name="apple-mobile-web-app-title" content="DBFX" />
       <meta name="theme-color" content="#052e16" />
       <body className="bg-green-950">
         {/* <audio src="/music.mp3" loop autoPlay className="hidden" /> */}
