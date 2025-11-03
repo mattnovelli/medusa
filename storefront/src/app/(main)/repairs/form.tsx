@@ -6,8 +6,8 @@ export default function RepairsForm() {
   const [state, formAction] = useFormState(submitRepairRequest, null)
 
   return (
-    <form action={formAction}>
-      <fieldset className="flex flex-col gap-4  mt-12 ">
+    <form action={formAction} className="text-xl">
+      <fieldset className="flex  flex-col gap-4  mt-12 ">
         {/* Success Message */}
         {state?.success && (
           <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded my-4">
@@ -38,12 +38,12 @@ export default function RepairsForm() {
           aria-hidden="true"
         />
 
-        <label className="flex flex-col gap-1" style={{ fontSize: "1.5rem" }}>
+        <label className="flex flex-col gap-1 " style={{ fontSize: "1.25rem" }}>
           Name
           <input
             type="text"
             name="name"
-            className="text-black rounded-sm p-1 text-xl"
+            className="text-black rounded-sm p-1 mt-2 text-xl"
             required
             autoComplete="name"
             maxLength={100}
@@ -53,7 +53,10 @@ export default function RepairsForm() {
 
         {/* Email and Phone on same line for desktop, stacked on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <label className="flex flex-col gap-1" style={{ fontSize: "1.5rem" }}>
+          <label
+            className="flex flex-col gap-1"
+            style={{ fontSize: "1.25rem" }}
+          >
             Email
             <input
               type="email"
@@ -65,7 +68,10 @@ export default function RepairsForm() {
               placeholder="hunter2@example.com"
             />
           </label>
-          <label className="flex flex-col gap-1" style={{ fontSize: "1.5rem" }}>
+          <label
+            className="flex flex-col gap-1"
+            style={{ fontSize: "1.25rem" }}
+          >
             Phone
             <input
               type="tel"
@@ -82,21 +88,21 @@ export default function RepairsForm() {
         </div>
         <fieldset
           className="flex flex-col gap-2"
-          style={{ fontSize: "1.5rem" }}
+          style={{ fontSize: "1.25rem" }}
         >
-          <legend style={{ fontSize: "1.5rem" }}>
+          <legend style={{ fontSize: "1.25rem" }}>
             Preferred Contact Method
           </legend>
           <label
             className="flex items-center gap-2 font-mono"
-            style={{ fontSize: "1.5rem" }}
+            style={{ fontSize: "1.25rem" }}
           >
             <input type="radio" name="contact-method" value="email" required />
             Email
           </label>
           <label
             className="flex items-center gap-2 font-mono"
-            style={{ fontSize: "1.5rem" }}
+            style={{ fontSize: "1.25rem" }}
           >
             <input type="radio" name="contact-method" value="phone" required />
             Phone
@@ -104,7 +110,7 @@ export default function RepairsForm() {
         </fieldset>
         <label
           className="flex flex-col gap-1  mt-2"
-          style={{ fontSize: "1.5rem" }}
+          style={{ fontSize: "1.25rem" }}
         >
           Item for Repair
           <input
@@ -116,7 +122,7 @@ export default function RepairsForm() {
             placeholder="Guitar pedal, amplifier, etc."
           />
         </label>
-        <label className="flex flex-col gap-1" style={{ fontSize: "1.5rem" }}>
+        <label className="flex flex-col gap-1" style={{ fontSize: "1.25rem" }}>
           Describe the Issue
           <textarea
             name="issue"
