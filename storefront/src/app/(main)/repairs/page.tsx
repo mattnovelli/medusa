@@ -18,7 +18,7 @@ const lexend = Lexend({
 
 export default function RepairsPage() {
   return (
-    <div className="text-2xl p-4 grid grid-rows-1 md:gap-8 md:grid-cols-3  grid-cols-1">
+    <div className="text-xl p-4 grid grid-rows-1 md:gap-8 md:grid-cols-3  grid-cols-1">
       <h1
         className={`${lexend.className} text-3xl font-semibold md:text-5xl  md:text-right`}
       >
