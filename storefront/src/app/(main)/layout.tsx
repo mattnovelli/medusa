@@ -1,27 +1,14 @@
 "use client"
-import { Metadata } from "next"
 
-import Footer from "@modules/layout/templates/footer"
-import Nav from "@modules/layout/templates/nav"
-import { getBaseURL } from "@lib/util/env"
-import Marquee from "./marquee"
 import PageButton from "@modules/home/components/PageButton"
 import { FaClipboardList, FaDraftingCompass, FaWrench } from "react-icons/fa"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import Wordmark from "@modules/home/components/logos/wordmark"
 import { FaPersonRays } from "react-icons/fa6"
 import SideMenu from "@modules/layout/components/side-menu"
-import { listRegions } from "@lib/data/regions"
-import { StoreRegion } from "@medusajs/types"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-// export const metadata: Metadata = {
-//   metadataBase: new URL(getBaseURL()),
-// }
-
 export default function PageLayout(props: { children: React.ReactNode }) {
-  // const regions = await listRegions().then((regions: StoreRegion[]) => regions)
   const pathname = usePathname()
 
   return (

@@ -1,10 +1,7 @@
 import { Metadata } from "next"
 
-import FeaturedProducts from "@modules/home/components/featured-products"
-import Hero, { AlternatingUnderlineLink } from "@modules/home/components/hero"
-import { getCollectionsWithProducts } from "@lib/data/collections"
-import { getRegion } from "@lib/data/regions"
-import { Lexend, Michroma } from "next/font/google"
+import { AlternatingUnderlineLink } from "@modules/home/components/hero"
+import { Lexend } from "next/font/google"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -17,17 +14,7 @@ const lexend = Lexend({
   weight: ["400", "600", "900"],
 })
 
-export default async function Home({
-  params: { countryCode },
-}: {
-  params: { countryCode: string }
-}) {
-  const collections = await getCollectionsWithProducts(countryCode)
-  const region = await getRegion(countryCode)
-
-  if (!collections || !region) {
-    return null
-  }
+export default async function Home() {
 
   return (
     <div className="grid  md:grid-cols-3 md:grid-rows-1 grid-cols-1 md:p-0 p-2 md:[&>*]:p-4 md:[&>*:not(:first-child)]:border-l md:[&>*:not(:first-child)]:border-dotted ">

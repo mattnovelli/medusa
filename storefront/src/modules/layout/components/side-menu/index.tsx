@@ -1,31 +1,14 @@
 "use client"
 
 import { Popover, Transition } from "@headlessui/react"
-import { ArrowRightMini, XMark } from "@medusajs/icons"
-import { Text, clx, useToggleState } from "@medusajs/ui"
 import { Fragment } from "react"
-
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import CountrySelect from "../country-select"
-import { HttpTypes } from "@medusajs/types"
 import PageButton from "@modules/home/components/PageButton"
 import { FaClipboardList, FaDraftingCompass, FaWrench } from "react-icons/fa"
 import { FaPersonRays } from "react-icons/fa6"
 import { GiHamburgerMenu } from "react-icons/gi"
-
-const SideMenuItems = {
-  Home: "/",
-  Survey: "/survey",
-  // About: "/about",
-  // Store: "/store",
-  // Search: "/search",
-  // Account: "/account",
-  // Cart: "/cart",
-}
+import { IoClose } from "react-icons/io5"
 
 const SideMenu = () => {
-  const toggleState = useToggleState()
-
   return (
     <div className="h-full">
       <div className="flex items-center h-full">
@@ -64,7 +47,7 @@ const SideMenu = () => {
                         onClick={close}
                         className="p-2 hover:bg-white/10 rounded-md transition-colors"
                       >
-                        <XMark />
+                        <IoClose size={"2rem"} />
                       </button>
                     </div>
 
@@ -116,9 +99,9 @@ const SideMenu = () => {
 
                     {/* Copyright at bottom */}
                     <div className="flex justify-center">
-                      <Text className="text-center txt-compact-small">
+                      <p className="text-center text-sm">
                         © {new Date().getFullYear()} Dearborn Audio Effects
-                      </Text>
+                      </p>
                     </div>
                   </div>
                 </Popover.Panel>

@@ -1,54 +1,117 @@
-![DBFX](/storefront/public/dbae-wordmark.svg)
+# Dearborn Audio Effects Website
 
-This repository contains a nextjs frontent and a meduas (vite) backend.
+A lightweight Next.js website for Dearborn Audio Effects featuring static pages and a repair request form.
 
-# Backend
+## Features
 
-### local setup
+- **About Page**: Information about Dearborn Plys and Dearborn FX
+- **Repairs Page**: Electronics repair services with a contact form
+- **Design Services Page**: Information about custom audio design services
+- **Survey Page**: Redirects to an external survey form
 
-Video instructions: https://youtu.be/PPxenu7IjGM
+## Local Setup
 
-- `cd backend/`
-- `pnpm install` or `npm i`
-- Rename `.env.template` -> `.env`
-- To connect to your online database from your local machine, copy the `DATABASE_URL` value auto-generated on Railway and add it to your `.env` file.
-  - If connecting to a new database, for example a local one, run `pnpm ib` or `npm run ib` to seed the database.
-- `pnpm dev` or `npm run dev`
+### Prerequisites
 
-### requirements
+- Node.js 17+ or npm
+- PostgreSQL database (only required for repair form functionality)
 
-- **postgres database** (Automatic setup when using the Railway template)
-- **redis** (Automatic setup when using the Railway template) - fallback to simulated redis.
-- **MinIO storage** (Automatic setup when using the Railway template) - fallback to local storage.
-- **Meilisearch** (Automatic setup when using the Railway template)
+### Installation
 
-### commands
+1. Clone the repository
+2. Navigate to the storefront directory:
+   ```bash
+   cd storefront/
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
 
-`cd backend/`
-`npm run ib` or `pnpm ib` will initialize the backend by running migrations and seed the database with required system data.
-`npm run dev` or `pnpm dev` will start the backend (and admin dashboard frontend on `localhost:9000/app`) in development mode.
-`pnpm build && pnpm start` will compile the project and run from compiled source. This can be useful for reproducing issues on your cloud instance.
+### Configuration
 
-# Storefront
+Create a `.env.local` file in the storefront directory with the following environment variables (only needed for repair form):
 
-### local setup
+```bash
+# PostgreSQL Database Configuration (for repair form)
+DATABASE_URL=postgresql://user:password@localhost:5432/dbname
+# OR use individual connection parameters:
+# POSTGRES_HOST=localhost
+# POSTGRES_PORT=5432
+# POSTGRES_DATABASE=your_database_name
+# POSTGRES_USER=your_username
+# POSTGRES_PASSWORD=your_password
 
-Video instructions: https://youtu.be/PPxenu7IjGM
+# Discord Webhook (optional - for repair request notifications)
+DISCORD_WEBHOOK_URL=your_discord_webhook_url
+```
 
-- `cd storefront/
-- Install dependencies `npm i` or `pnpm i`
-- Rename `.env.local.template` -> `.env.local`
+### Running the Development Server
 
-### requirements
+```bash
+npm run dev
+# or
+pnpm dev
+```
 
-- A running backend on port 9000 is required to fetch product data and other information needed to build Next.js pages.
+The site will be available at [http://localhost:3000](http://localhost:3000)
 
-### commands
+### Building for Production
 
-`cd storefront/`
-`npm run dev` or `pnpm dev` will run the storefront on uncompiled code, with hot-reloading as files are saved with changes.
+```bash
+npm run build
+npm start
+# or
+pnpm build
+pnpm start
+```
 
-## Useful resources
+## Database Setup (for Repair Form)
 
-- How to setup credit card payment with Stripe payment module: https://youtu.be/dcSOpIzc1Og
-- https://funkyton.com/medusajs-2-0-is-finally-here/#succuessfully-deployed-whats-next
+The repair form requires a PostgreSQL database. The table will be automatically created when the first repair request is submitted. Alternatively, you can create it manually:
+
+```sql
+CREATE TABLE repair_requests (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(254) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
+  contact_method VARCHAR(10) NOT NULL,
+  item VARCHAR(500) NOT NULL,
+  issue TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## Project Structure
+
+```
+storefront/
+├── src/
+│   ├── app/              # Next.js app directory
+│   │   ├── (main)/       # Main layout group
+│   │   │   ├── design/   # Design services page
+│   │   │   ├── repairs/  # Repairs page with form
+│   │   │   ├── survey/   # Survey redirect page
+│   │   │   └── page.tsx  # About/home page
+│   │   └── layout.tsx    # Root layout
+│   ├── helpers/          # Server-side helper functions
+│   ├── modules/          # Reusable UI components
+│   └── types/            # TypeScript type definitions
+└── public/               # Static assets
+```
+
+## Tech Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: PostgreSQL (for repair form only)
+- **UI Components**: Headless UI, React Icons
+
+## License
+
+See LICENSE file for details.
