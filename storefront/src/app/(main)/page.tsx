@@ -5,6 +5,7 @@ import Hero, { AlternatingUnderlineLink } from "@modules/home/components/hero"
 import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 import { Lexend, Michroma } from "next/font/google"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "About",
@@ -61,9 +62,9 @@ export default async function Home({
           Illinois.
         </p>
         <p>
-          Dearborn FX is my project to create strange and wonderful
-          soundmaking devices. Pedal effects and stylized microphones are on my
-          mind, so that's what you can expect to see in the near future.
+          Dearborn FX is my project to create strange and wonderful soundmaking
+          devices. Pedal effects and stylized microphones are on my mind, so
+          that's what you can expect to see in the near future.
         </p>
         <p>
           I started playing riot grrl and messing with pedals in high school,
@@ -76,12 +77,16 @@ export default async function Home({
           , building hyper-sensitive synthesizers, programming UI, and providing
           technical support to customers. I've organized shows, run sound live
           on air for{" "}
-          <AlternatingUnderlineLink
+          <Link
             href="https://new.weft.org/"
-            text="WEFT Sessions"
-          /> 
-          , Twitch streamed myself producing, and
-          repaired everything I could get my hands on.
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2"
+          >
+            WEFT Sessions
+          </Link>
+          , Twitch streamed myself producing, and repaired everything I could
+          get my hands on.
         </p>
 
         <p>
